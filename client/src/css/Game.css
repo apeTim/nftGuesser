@@ -1,0 +1,43 @@
+.piece_image {
+    height: 400px;
+    width: 400px;
+    border-radius: 58px;
+}
+
+.start_game {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #CC6EFF 20%, #4E38BA 100%);
+    mix-blend-mode: difference;
+    font-size: 1.3rem;
+    border-radius: 999px;
+    color: white;
+    padding: 10px 100px;
+}
+
+.submit_answer {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #CC6EFF;
+    font-size: 1.3rem;
+    border-radius: 999px;
+    color: white;
+    padding: 10px 100px;
+}
+
+.play_again {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: #CC6EFF;
+    font-size: 1.3rem;
+    border-radius: 999px;
+    color: white;
+    padding: 10px 100px;
+}
+
+.Dropdown-control {
+    background-color: rgba(255, 255, 255, .8) !important;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "nftalboom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "server:dev": "tsnd -r dotenv/config ./src/index.ts dotenv_config_path=./.env.development",
+    "server:production": "node -r dotenv/config dist/index.js dotenv_config_path=./.env.production",
+    "randomNFT": "tsnd ./src/utils/getRandomNFT.ts"
+  },
+  "dependencies": {
+    "@types/sharp": "^0.29.4",
+    "axios": "^0.24.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "moralis": "^0.0.135",
+    "pino": "^7.4.0",
+    "pino-pretty": "^7.2.0",
+    "sharp": "^0.29.3",
+    "web3.storage": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/pino": "^7.0.5",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  }
+}

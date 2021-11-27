@@ -1,0 +1,43 @@
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.section {
+  backdrop-filter: blur(40px);
+  flex-grow: 100;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+
+.section::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+
+.section_title:after {
+   content: "";
+    width: 110%;
+    height: 10px;
+    background-color: #dda0fd;
+    z-index: -1;
+    border-radius: 50px;
+    left: -5%;
+    position: relative;
+    display: block;
+    top: -15px;
+    opacity: .7;
+}
+
+.section_title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}

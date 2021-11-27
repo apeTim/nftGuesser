@@ -1,0 +1,34 @@
+.home .technologies img {
+    height: 30px;
+}
+
+.about_us {
+    width: 70%;
+}
+.about_us p {
+    font-size: 1.2rem;
+    opacity: .9;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.bottom .companies {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom h3 {
+    opacity: .9;
+    text-align: left;
+}
+
+.bottom img {
+    height: 40px;
+    margin-bottom: 15px;
+    float: left;
+}
