@@ -1,5 +1,6 @@
-# NFT GUESSER - COMING SOON
+# NFT GUESSER
 Fun game for NFT enthusiasts. Guess NFT by its small piece!
+[Live Demo](https://nftguesser.vercel.app/) 
 
 ## Inspiration
 We incredible love the NFT community. Every day new collections are born. But users cant forget those top tier collections like CryptoPunks, BAYC e.t.c. because they incredible changed the industry. And to help users fresh their memory and also see unique NFTs from the collections in a fun way -  the game was made.
