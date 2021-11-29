@@ -88,7 +88,7 @@ function Game() {
         if (!existingGame) return
 
         const collection = collections.find(c => c.id === answer)
-        existingGame.set('answer', collection)
+        existingGame.set('answer', collection?.toPointer())
         existingGame.set('status', 'answered')
 
         await existingGame.save()

@@ -1,0 +1,29 @@
+[33mcommit 10bc95ac7a6a0b2a9b5266dae120b1416fbfe224[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Tim32 <ponweb@yandex.ru>
+Date:   Tue Nov 30 00:29:21 2021 +0300
+
+    app improvement 01
+
+[33mcommit b9e6c50e2b3e7817a64469959058c89c0ccfba8d[m
+Author: Tim32 <ponweb@yandex.ru>
+Date:   Tue Nov 30 00:27:30 2021 +0300
+
+    app improvement
+
+[33mcommit c4a945d8390cb8f5fbd6922b3ac72fba81f6fc25[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Tim32 <ponweb@yandex.ru>
+Date:   Sun Nov 28 03:04:50 2021 +0300
+
+    page title changed
+
+[33mcommit 1719c54eec491dbf524e1109dba521d8019d11d2[m
+Author: Tim32 <ponweb@yandex.ru>
+Date:   Sun Nov 28 02:51:15 2021 +0300
+
+    vercel config added
+
+[33mcommit ba27d838e8038622e6f4fe4682081a67c806bcd1[m
+Author: Tim32 <ponweb@yandex.ru>
+Date:   Sun Nov 28 02:48:44 2021 +0300
+
+    initial commit
