@@ -41,3 +41,19 @@
 .Dropdown-control {
     background-color: rgba(255, 255, 255, .8) !important;
 }
+
+.preparing_game {
+    display: flex;
+    flex-direction: column;
+}
+
+.retry {
+    cursor: pointer;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+.retry img {
+    margin-right: 10px;
+}

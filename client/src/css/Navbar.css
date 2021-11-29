@@ -83,3 +83,7 @@
 .profile_streak {
     margin: 0;
 }
+
+.logout {
+    cursor: pointer;
+}

@@ -4,9 +4,6 @@ import getRandomNFT from "../utils/getRandomNFT"
 
 export default async function (game: Moralis.Object<Moralis.Attributes>) {
     try {
-        game.set('status', 'waitingQuestion')
-        await game.save()
-
         const { fullImage, pieceBuffer, collection, nftName } = await getRandomNFT()
 
         const Question = Moralis.Object.extend('Question')

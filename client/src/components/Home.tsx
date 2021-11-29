@@ -1,6 +1,12 @@
 import React from 'react';
+import YouTube, { YouTubeProps } from 'react-youtube'
 import '../css/Home.css'
 import 'react-dropdown/style.css';
+
+const ytOpts = {
+    height: '390',
+    width: '640'
+};
 
 function Home() {
 
@@ -15,6 +21,8 @@ function Home() {
                     increases. For a wrong guess, your streak goes to 0.
                     Stay at the top of the streaks leaderboard to win cool prizes!</p>
             </div>
+
+            <YouTube videoId="MBOhQIRTUPo" opts={ytOpts} onReady={(e) => e.target.pauseVideo()} />
 
             <div className='bottom'>
                 <div className='group'>

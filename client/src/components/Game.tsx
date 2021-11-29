@@ -52,6 +52,8 @@ function Game() {
         onUpdate: async data => {
             if (data.id === existingGame?.id) {
 
+                setExistingGame(data)
+
                 if (data.get('status') === 'waitingAnswer') {
                     const question = await data.get('question1').fetch()
                     const pieceImage = btoa(String.fromCharCode(...new Uint8Array(question.get("pieceBuffer").data)));
@@ -60,7 +62,6 @@ function Game() {
                     setPieceImage(pieceImage)
                 }
                 else if (data.get('status') === 'won' || data.get('status') === 'lost') {
-                    setExistingGame(data)
                     const newUser = await user?.fetch()
                     setUserData({ streak: newUser?.get('streak') })
                     const correctAnswer = await data.get("question1").fetch()
@@ -87,8 +88,18 @@ function Game() {
         if (!existingGame) return
 
         const collection = collections.find(c => c.id === answer)
-        existingGame?.set('answer', collection)
-        existingGame?.set('status', 'answered')
+        existingGame.set('answer', collection)
+        existingGame.set('status', 'answered')
+
+        await existingGame.save()
+    }
+
+    const retryGame = async () => {
+        if (!existingGame) return
+        if (!(existingGame.get('status') === 'preparing')) return
+
+        existingGame.set('active', false)
+        existingGame.set('status', 'errored')
 
         await existingGame.save()
     }
@@ -133,7 +144,13 @@ function Game() {
                         {existingGame.get('active') ? (
                             <>
                                 {existingGame.get('status') === 'preparing' && !pieceImage ? (
-                                    <h2>We are generating random NFT, wait a sec!</h2>
+                                    <div className='preparing_game'>
+                                        <h2>We are generating a random NFT, wait a sec!</h2>
+                                        <div onClick={() => retryGame()} className='retry'>
+                                            <img src='./icons/report.svg' />
+                                            <h3>If your generation takes too long. Click here</h3>
+                                        </div>
+                                    </div>
                                 ) : (
                                     <>
                                         <h3>NFT Piece:</h3>
@@ -148,17 +165,15 @@ function Game() {
                         )
                             : <div className='gameEnd'>
                                 <button className='play_again' onClick={reStartSoloGame}>Play Again!</button>
-                                {existingGame.get('status') === 'won' ? (
+                                {existingGame.get('status') === 'won' || existingGame.get('status') === 'lost' ? (
                                     <>
-                                        <h3>Congratulations! You won!</h3>
+                                        <h3>You {existingGame.get('status')}!</h3>
                                         <h3>It was {correctAnswer?.get("nftName")}</h3>
                                         <img className='piece_image' src={correctAnswer?.get("fullImage")} />
                                     </>
                                 ) : (
                                     <>
-                                        <h3>I'm sorry, but you lost.</h3>
-                                        <h3>It was {correctAnswer?.get("nftName")}</h3>
-                                        < img className='piece_image' src={correctAnswer?.get("fullImage")} />
+                                        <h3>We are sorry. Some times there are technical issues. Please, try again!</h3>
                                     </>
                                 )}
                             </div>
@@ -168,7 +183,9 @@ function Game() {
                     : (<div>
                         <button className='start_game' onClick={startSoloGame}>Start!</button>
                     </div>)
-                }</> : null}
+                }</> : (
+                    <h3>Sign in to start</h3>
+                )}
         </div>
     );
 }
